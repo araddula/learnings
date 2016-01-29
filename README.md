@@ -1,2 +1,0 @@
-# learnings
-Learning and Development
