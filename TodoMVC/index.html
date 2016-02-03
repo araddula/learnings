@@ -61,7 +61,7 @@
 
     <div class="container">
         
-      <div class="starter-template" ng-controller="AddCtrl">
+      <div class="starter-template" ng-controller="TodoCtrl">
           <div class="table-responsive">
             <form ng-submit="addTodo(todo)">
                 <input type="text" placeholder="Type your todo and hit enter" name="todo" ng-model="todo" class="input-large" style="width:100%">
@@ -79,8 +79,17 @@
                 <tbody>
                     <tr ng-repeat="item in list">
                         <td>{{$index}}</td>
-                        <td>{{item}}</td>
-                        <td><button class="btn btn-primary" ng-click="deleteTodo(item)">Delete</button></td>
+                        <td>
+                            <span ng-hide="editMode">{{item}}</span>
+                            <form ng-submit="updateTodo(item,$index)" ng-show="editMode">
+                                <input type="text" placeholder="Type your todo and hit enter" name="todo" ng-model="item" class="input-large" style="width:100%">
+                            </form>
+                        </td>
+                        <td>
+                            <button ng-show="editMode" class="btn btn-primary" ng-click="updateTodo(item,$index)">Update</button>
+                            <button ng-hide="editMode" class="btn btn-primary" ng-click="editTodo(item)">Edit</button>
+                            <button class="btn btn-primary" ng-click="deleteTodo(item)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -96,7 +105,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <!--
     <script src="js/controllers.js"></script>
     <script src="js/app.js"></script>
+    -->
+    <!-- using grunt minified js file -->
+    <script src="js/build/app.min.js"></script>
   </body>
 </html>
