@@ -1,0 +1,23 @@
+# dependencies
+/ReactPractice/node_modules
+/ReactPractice/.pnp
+/ReactPractice.pnp.js
+
+# testing
+/ReactPractice/coverage
+
+# production
+/ReactPractice/build
+
+# misc
+.DS_Store
+/ReactPractice/.DS_Store
+/ReactPractice/.env.local
+/ReactPractice/.env.development.local
+/ReactPractice/.env.test.local
+/ReactPractice/.env.production.local
+
+/ReactPractice/npm-debug.log*
+/ReactPractice/yarn-debug.log*
+/ReactPractice/yarn-error.log*
+/ReactPractice/yarn.lock
